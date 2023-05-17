@@ -48,28 +48,24 @@
 	<Phototrophs_Class.PlanGenBuild>
 		<defName>MyCastlePlan</defName>
 		<buildingMap>
-			<li>Em,Em,cR,Em</li>
-			<li>fw,fk,Em,Em</li>
-			<li>cR,cO,cR,Em</li>
-			<li>Em,Em,ie,Em</li>
+			<li>fh,cR,Em</li>
+			<li>Em,cR,cR</li>
+			<li>fh,Em,fv</li>
 		</buildingMap>
 		<terrainMap>
-			<li>pp,pp,pp,pJ</li>
-			<li>pJ,pJ,pJ,pJ</li>
-			<li>pp,pp,pp,pJ</li>
-			<li>pp,pp,pJ,pN</li>
+			<li>pJ,pp,pp</li>
+			<li>pJ,pp,pp</li>
+			<li>pJ,pJ,pJ</li>
 		</terrainMap>
 		<roofMap>
-			<li>0,0,0,0</li>
-			<li>0,0,0,0</li>
-			<li>0,0,0,0</li>
-			<li>0,0,0,0</li>
+			<li>0,0,0</li>
+			<li>0,0,0</li>
+			<li>0,0,0</li>
 		</roofMap>
 		<stuffMap>
-			<li>eA,Em,eA,Em</li>
-			<li>Em,Em,Em,Em</li>
-			<li>eA,eA,eA,Em</li>
-			<li>Em,Em,Em,Em</li>
+			<li>Em,er,Em</li>
+			<li>Em,er,er</li>
+			<li>Em,Em,Em</li>
 		</stuffMap>
 	</Phototrophs_Class.PlanGenBuild>
 

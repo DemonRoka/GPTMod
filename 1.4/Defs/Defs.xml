@@ -1747,10 +1747,12 @@
 		<defName>hT</defName>
 		<thingDef>AncientWarspiderRemains</thingDef>
 	</Phototrophs_Class.SymbolDefinition>
+	
 	<Phototrophs_Class.SymbolDefinition>
 		<defName>hU</defName>
 		<thingDef>AncientPipelineSection</thingDef>
 	</Phototrophs_Class.SymbolDefinition>
+	
 	<Phototrophs_Class.SymbolDefinition>
 		<defName>hV</defName>
 		<thingDef>AncientWarwalkerFoot</thingDef>

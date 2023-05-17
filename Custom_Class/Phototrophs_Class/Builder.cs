@@ -14,7 +14,6 @@ namespace Phototrophs_Class
 {
     public class SymbolDefinition : Def
     {
-        public string symbol;
         public ThingDef thingDef;
         public TerrainDef terrainDef;
         public ThingDef stuffDef;
@@ -30,6 +29,14 @@ namespace Phototrophs_Class
     {
         public static void CreateBuildingMap(IntVec3 position, Map map, List<string> buildingMap, List<string> roofMap, List<string> stuffMap, List<string> terrainMap)
         {
+
+            Log.Message(position.ToString());
+            Log.Message(map.ToString());
+            Log.Message(buildingMap.ToString());
+            Log.Message(roofMap.ToString());
+            Log.Message(terrainMap.ToString());
+            Log.Message(stuffMap.ToString());
+
             for (int z = 0; z < buildingMap.Count; z++)
             {
                 string[] row = buildingMap[z].Split(',');
@@ -76,8 +83,6 @@ namespace Phototrophs_Class
             }
         }
     }
-
-
     public class Designator_CreateXML : Designator
     {
         private Dictionary<string, string> symbolLibrary;
@@ -110,6 +115,8 @@ namespace Phototrophs_Class
             foreach (Phototrophs_Class.SymbolDefinition symbolDef in symbolDefinitions)
             {
                 string idSymbol = symbolDef.defName;
+
+                Log.Message(idSymbol.ToString());
 
                 if (symbolDef.thingDef != null)
                 {
@@ -191,6 +198,7 @@ namespace Phototrophs_Class
 
         private void ProcessCell(IntVec3 c, int row, int col)
         {
+
             // Ensure the row exists in the map.
             while (selectedRoofSymbols.Count <= row)
             {
@@ -253,14 +261,19 @@ namespace Phototrophs_Class
                 if (thing.Stuff != null) // Если у вещи есть материал
                 {
                     string stuffDefName = thing.Stuff.defName;
-                    if (symbolLibrary.ContainsKey(stuffDefName))
+                    SymbolDefinition stuffSymbolDef = DefDatabase<SymbolDefinition>.AllDefsListForReading.Find(s => s.stuffDef != null && s.stuffDef.defName == stuffDefName);
+                    if (stuffSymbolDef != null)
                     {
-                        selectedStuffSymbols[row][col] = symbolLibrary[stuffDefName]; // Используем символ из библиотеки, если он есть
+                        selectedStuffSymbols[row][col] = stuffSymbolDef.defName; // Используем символ из библиотеки, если он есть
                     }
                     else
                     {
                         selectedStuffSymbols[row][col] = "Em"; // Используем "Em" как пустой символ, если в библиотеке нет символа
                     }
+                }
+                else
+                {
+                    selectedStuffSymbols[row][col] = "Em"; // Если у вещи нет материала, используем "Em" как пустой символ
                 }
             }
 

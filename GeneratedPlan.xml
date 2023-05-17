@@ -1,15 +1,15 @@
 ﻿<Phototrophs_Class.PlanGenBuild>
     <buildingMap>
-        <li>es,es,es,Em</li>
-        <li>fq,es,es,Em</li>
-        <li>fi,Em,Em,Em</li>
-        <li>fj,fh,Em,Em</li>
+        <li>Em,Em,Em,Em</li>
+        <li>Em,al,al,Em</li>
+        <li>Em,al,al,Em</li>
+        <li>Em,Em,Em,Em</li>
     </buildingMap>
     <terrainMap>
-        <li>vB,vB,vB,vB</li>
-        <li>pM,vB,vB,vB</li>
-        <li>pM,vB,vB,vB</li>
-        <li>pM,pM,vB,vB</li>
+        <li>qc,qc,qc,qc</li>
+        <li>qc,qc,qc,qc</li>
+        <li>qc,qc,qc,qc</li>
+        <li>qc,qc,qc,qc</li>
     </terrainMap>
     <roofMap>
         <li>0,0,0,0</li>
@@ -18,7 +18,7 @@
         <li>0,0,0,0</li>
     </roofMap>
     <stuffMap>
-        <li>Em,Em,Em,Em</li>
+        <li>Em,Zc,Zc,Em</li>
         <li>Em,Em,Em,Em</li>
         <li>Em,Em,Em,Em</li>
         <li>Em,Em,Em,Em</li>

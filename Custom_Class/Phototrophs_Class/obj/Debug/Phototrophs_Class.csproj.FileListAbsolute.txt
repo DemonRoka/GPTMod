@@ -78,3 +78,4 @@ D:\SteamLibrary\steamapps\common\RimWorld\Mods\GPTMood\Custom_Class\Phototrophs_
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\GPTMood\Custom_Class\Phototrophs_Class\obj\Debug\Phototrophs_Class.csproj.CopyComplete
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\GPTMood\Custom_Class\Phototrophs_Class\obj\Debug\Phototrophs_Class.dll
 D:\SteamLibrary\steamapps\common\RimWorld\Mods\GPTMood\Custom_Class\Phototrophs_Class\obj\Debug\Phototrophs_Class.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\GPTMood\Custom_Class\Phototrophs_Class\obj\Debug\Phototrophs_Class.csproj.AssemblyReference.cache
