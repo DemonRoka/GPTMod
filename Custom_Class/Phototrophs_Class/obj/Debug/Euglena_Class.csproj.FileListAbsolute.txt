@@ -1,0 +1,8 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\bin\Debug\Phototrophs_Class.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\bin\Debug\Phototrophs_Class.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\bin\Debug\UnityEngine.CoreModule.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\bin\Debug\UnityEngine.SharedInternalsModule.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\obj\Debug\Euglena_Class.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\obj\Debug\Euglena_Class.csproj.CopyComplete
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\obj\Debug\Phototrophs_Class.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Custom_Class\Phototrophs_Class\obj\Debug\Phototrophs_Class.pdb

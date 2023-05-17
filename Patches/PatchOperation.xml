@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>	
+	
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<success>Always</success>
+				<xpath>Defs/DesignationCategoryDef[@Name="Orders"]/specialDesignatorClasses</xpath>
+				<value>
+					<li>
+						<li>Phototrophs_Class.Designator_AreaExport</li>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+
+</Patch>
