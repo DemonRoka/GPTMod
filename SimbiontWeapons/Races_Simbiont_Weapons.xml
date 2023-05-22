@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--Симбионты дальнего боя-->
+	<ThingDef Abstract="True" Name="BaseRangeWeaponSimbiont">
+		<thingClass>Pawn</thingClass>
+		<category>Pawn</category>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
+		<containedItemsSelectable>true</containedItemsSelectable>
+		<tickerType>Normal</tickerType>
+		<useHitPoints>false</useHitPoints>
+		<hasTooltip>true</hasTooltip>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<techLevel>Industrial</techLevel>
+		<altitudeLayer>Pawn</altitudeLayer>
+		<alwaysHaulable>true</alwaysHaulable>
+		<equipmentType>Primary</equipmentType>
+		<pathCost>14</pathCost>
+		<selectable>true</selectable>
+		<generateCommonality>0.3</generateCommonality>
+		<soundImpactDefault>BulletImpact_Flesh</soundImpactDefault>
+		<inspectorTabs>
+			<li>ITab_Pawn_Health</li>
+			<li>ITab_Pawn_Needs</li>
+			<li>ITab_Pawn_Character</li>
+			<li>ITab_Pawn_Training</li>
+			<li>ITab_Pawn_Social</li>
+			<li>ITab_Pawn_Guest</li>
+			<li MayRequire="Ludeon.RimWorld.Ideology">ITab_Pawn_Slave</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">ITab_Pawn_Feeding</li>
+			<li>ITab_Pawn_FormingCaravan</li>
+			<li>ITab_Pawn_Gear</li>
+			<li>ITab_Pawn_Log</li>
+		</inspectorTabs>
+		<recipes>
+			<li>ExciseCarcinoma</li>
+			<li>AdministerMechSerumHealer</li>
+			<li>RemoveBodyPart</li>
+			<li>Euthanize</li>
+			<li>Anesthetize</li>
+			<li>CureScaria</li>
+			<li>Sterilize</li>
+			<li MayRequire="Ludeon.RimWorld.Royalty">CureBloodRot</li>
+			<li MayRequire="Ludeon.RimWorld.Biotech">TerminatePregnancy</li>
+		</recipes>
+		<thingCategories>
+			<li>Animals</li>
+			<li>WeaponsRanged</li>
+		</thingCategories>
+		<weaponClasses>
+			<li>Ranged</li>
+			<li>RangedLight</li>
+			<li>ShortShots</li>
+		</weaponClasses>
+		<weaponTags>
+			<li>Autopistol</li>
+			<li>SimpleGun</li>
+			<li>Gun</li>
+			<li>SimbiontWeapons</li>
+		</weaponTags>
+		<tradeTags>
+			<li>SimbiontGunRange</li>
+		</tradeTags>
+		<race>
+			<thinkTreeMain>Animal</thinkTreeMain>
+			<thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+			<hasGenders>false</hasGenders>
+			<nameGenerator>NamerAnimalGenericMale</nameGenerator>
+			<nameGeneratorFemale>NamerAnimalGenericFemale</nameGeneratorFemale>
+			<petness>0.15</petness>
+			<manhunterOnTameFailChance>0.001</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.001</manhunterOnDamageChance>
+			<nameOnTameChance>1</nameOnTameChance>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+			<hediffGiverSets>
+				<li>OrganicStandard</li>
+			</hediffGiverSets>
+		</race>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<LeatherAmount>40</LeatherAmount>
+			<ToxicResistance>0.5</ToxicResistance>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+			<li>
+				<compClass>CompEquippable</compClass>
+			</li>
+		</comps>
+		<allowedArchonexusCount>1</allowedArchonexusCount>
+	</ThingDef>
+		
+<!--Архитный плевака-->
+	
+	<!--Новая пешка-->
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>ArchitSpitter</defName>
+		<label>archit fire spitter</label>
+		<race>ArchitSpitter</race>
+		<combatPower>10</combatPower>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<fixedGender>None</fixedGender>
+		<defaultFactionType>PlayerColony</defaultFactionType><!--Для теста-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Simbiont/ArchitSpitter/ArchitSpitter</texPath>
+					<drawSize>1.25</drawSize>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Simbiont/ArchitSpitter/Dessicated_ArchitSpitter</texPath>
+					<drawSize>1.25</drawSize>
+				</dessicatedBodyGraphicData>
+				<butcherBodyPart>
+					<bodyPartGroup>GrownSymbiontGland</bodyPartGroup>
+					<thing>WoodLog</thing><!--Генный материал для смешивания симбионтов-->
+				</butcherBodyPart>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!--Новая раса-->
+	<ThingDef ParentName="BaseRangeWeaponSimbiont">
+		<defName>ArchitSpitter</defName>
+		<label>archite spitter</label>
+		<description>.</description>
+		<statBases>
+			<MoveSpeed>4.0</MoveSpeed>
+			<MarketValue>35</MarketValue>
+			<ComfyTemperatureMin>10</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
+			<SellPriceFactor>0.20</SellPriceFactor>
+			<Mass>3.4</Mass>
+			<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<chanceFactor>0.7</chanceFactor>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>5</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>FireLizardBody</body>
+			<baseBodySize>0.5</baseBodySize>
+			<baseHungerRate>0.1</baseHungerRate>
+			<baseHealthScale>0.5</baseHealthScale>
+			<foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+			<leatherDef>Leather_Light</leatherDef>
+			<wildness>0</wildness>
+			<trainability>Intermediate</trainability>
+			<petness>0.15</petness>
+			<mateMtbHours>8</mateMtbHours>
+			<gestationPeriodDays>5.661</gestationPeriodDays>
+			<lifeExpectancy>8</lifeExpectancy>
+			<canReleaseToWild>false</canReleaseToWild>
+			<lifeStageAges>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Iguana_Wounded</soundWounded>
+					<soundDeath>Pawn_Iguana_Death</soundDeath>
+					<soundCall>Pawn_Iguana_Call</soundCall>
+					<soundAngry>Pawn_Iguana_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<headPosPerRotation>
+				<li>(-0.01, 0, 0.3)</li>
+				<li>(0.35, 0, 0.05)</li>
+				<li>(0.0, 0, -0.24)</li>
+				<li>(-0.35, 0, 0.05)</li>
+			</headPosPerRotation>
+		</race>
+		<!--Настройки оружия-->
+		<equippedStatOffsets>
+			<PawnBeauty>-2</PawnBeauty>
+			<CancerRate>0.2</CancerRate>
+		</equippedStatOffsets>
+		<graphicData>
+			<texPath>Simbiont/ArchitSpitter/ArchitSpitterWeapons</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_IncendiaryLauncher</defaultProjectile>
+				<warmupTime>3.5</warmupTime>
+				<range>23.9</range>
+				<forcedMissRadius>1.9</forcedMissRadius>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_IncendiaryLauncher</soundCast>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>14</muzzleFlashScale>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+				</targetParams>
+			</li>
+		</verbs>
+		<!--Настройки оружия-->
+	</ThingDef>
+	
+	<!--Новое тело-->
+	<BodyDef>
+		<defName>FireLizardBody</defName>
+		<label>quadruped animal</label>
+		<corePart>
+			<def>Body</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Tail</def>
+					<coverage>0.05</coverage>
+				</li>
+				<li>
+					<def>Spine</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>SymbiontGland</def>
+					<coverage>0.20</coverage>
+					<groups>
+						<li>GrownSymbiontGland</li>
+					</groups>
+				</li>
+				<li>
+					<def>Stomach</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>left lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>right lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>left kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>right kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Liver</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Neck</def>
+					<coverage>0.24</coverage>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Head</def>
+							<coverage>0.75</coverage>
+							<groups>
+								<li>HeadAttackTool</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Skull</def>
+									<coverage>0.24</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Brain</def>
+											<coverage>0.7</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Eye</def>
+									<customLabel>left eye</customLabel>
+									<coverage>0.09</coverage>
+								</li>
+								<li>
+									<def>Eye</def>
+									<customLabel>right eye</customLabel>
+									<coverage>0.09</coverage>
+								</li>
+								<li>
+									<def>Ear</def>
+									<customLabel>left ear</customLabel>
+									<coverage>0.08</coverage>
+								</li>
+								<li>
+									<def>Ear</def>
+									<customLabel>right ear</customLabel>
+									<coverage>0.08</coverage>
+								</li>
+								<li>
+									<def>Nose</def>
+									<coverage>0.1</coverage>
+								</li>
+								<li>
+									<def>AnimalJaw</def>
+									<coverage>0.1</coverage>
+									<groups>
+										<li>Teeth</li>
+									</groups>
+								</li>
+								<li>
+									<def>Jowl</def>
+									<coverage>0.1</coverage>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front left leg</customLabel>
+					<coverage>0.015</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front left leg first claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontLeftClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front left leg second claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontLeftClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front left leg third claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontLeftClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front left leg fourth claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontLeftClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front left leg fifth claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontLeftClaws</li>
+							</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front right leg</customLabel>
+					<coverage>0.015</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front right leg first claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontRightClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front right leg second claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontRightClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front right leg third claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontRightClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front right leg fourth claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontRightClaws</li>
+							</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+							<customLabel>front right leg fifth claw</customLabel>
+							<coverage>0.01</coverage>
+							<groups>
+								<li>FrontRightClaws</li>
+							</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear left leg</customLabel>
+					<coverage>0.015</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear left leg first claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear left leg second claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear left leg third claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear left leg fourth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear left leg fifth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear right leg</customLabel>
+					<coverage>0.015</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear right leg first claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear right leg second claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear right leg third claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear right leg fourth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>rear right leg fifth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>middle left leg</customLabel>
+					<coverage>0.015</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle left leg first claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle left leg second claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle left leg third claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle left leg fourth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle left leg fifth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>middle right leg</customLabel>
+					<coverage>0.015</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle right leg first claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle right leg second claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle right leg third claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle right leg fourth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+							<customLabel>middle right leg fifth claw</customLabel>
+							<coverage>0.01</coverage>
+						</li>
+					</parts>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+
+<!--Поработитель-->
+	
+	<!--Новая пешка-->
+	<PawnKindDef ParentName="AnimalKindBase">
+		<defName>ArchitEnslaver</defName>
+		<label>archite enslaver</label>
+		<race>ArchitEnslaver</race>
+		<combatPower>10</combatPower>
+		<ecoSystemWeight>0</ecoSystemWeight>
+		<fixedGender>None</fixedGender>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<!--Для теста-->
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Simbiont/ArchitSpitter/ArchitSpitter</texPath>
+					<drawSize>1.25</drawSize>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Simbiont/ArchitSpitter/Dessicated_ArchitSpitter</texPath>
+					<drawSize>1.25</drawSize>
+				</dessicatedBodyGraphicData>
+				<butcherBodyPart>
+					<bodyPartGroup>GrownSymbiontGland</bodyPartGroup>
+					<thing>WoodLog</thing>
+					<!--Генный материал для смешивания симбионтов-->
+				</butcherBodyPart>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+	
+	<!--Новая раса-->
+	<ThingDef ParentName="BaseRangeWeaponSimbiont">
+		<defName>ArchitEnslaver</defName>
+		<label>archite enslaver</label>
+		<description>.</description>
+		<statBases>
+			<MoveSpeed>4.0</MoveSpeed>
+			<MarketValue>35</MarketValue>
+			<ComfyTemperatureMin>10</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
+			<SellPriceFactor>0.20</SellPriceFactor>
+			<Mass>3.4</Mass>
+			<RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+		</statBases>
+    <tools>
+      <li>
+        <label>left claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>right claw</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>11</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <capacities>
+          <li>Bite</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+        <chanceFactor>0.7</chanceFactor>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+		<race>
+			<body>QuadrupedAnimalWithPawsAndTail</body>
+			<baseBodySize>0.5</baseBodySize>
+			<baseHungerRate>0.1</baseHungerRate>
+			<baseHealthScale>0.5</baseHealthScale>
+			<foodType>CarnivoreAnimal, OvivoreAnimal</foodType>
+			<leatherDef>Leather_Light</leatherDef>
+			<wildness>0</wildness>
+			<trainability>Intermediate</trainability>
+			<petness>0.15</petness>
+			<mateMtbHours>8</mateMtbHours>
+			<gestationPeriodDays>5.661</gestationPeriodDays>
+			<lifeExpectancy>8</lifeExpectancy>
+			<canReleaseToWild>false</canReleaseToWild>
+			<lifeStageAges>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Iguana_Wounded</soundWounded>
+					<soundDeath>Pawn_Iguana_Death</soundDeath>
+					<soundCall>Pawn_Iguana_Call</soundCall>
+					<soundAngry>Pawn_Iguana_Angry</soundAngry>
+				</li>
+			</lifeStageAges>
+			<headPosPerRotation>
+				<li>(-0.01, 0, 0.3)</li>
+				<li>(0.35, 0, 0.05)</li>
+				<li>(0.0, 0, -0.24)</li>
+				<li>(-0.35, 0, 0.05)</li>
+			</headPosPerRotation>
+		</race>
+		<!--Настройки оружия-->
+		<equippedStatOffsets>
+			<PawnBeauty>-2</PawnBeauty>
+		</equippedStatOffsets>
+		<graphicData>
+			<texPath>Simbiont/ArchitSpitter/ArchitSpitterWeapons</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_EnslaverSimbiontWeapons</defaultProjectile>
+				<warmupTime>5</warmupTime>
+				<range>10</range>
+				<soundCast>Shot_ToxicNeedleGun</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<!--Настройки оружия-->
+	</ThingDef>
+
+	<!--Новая пуля-->
+	<ThingDef ParentName="BaseBullet">
+    <defName>Bullet_EnslaverSimbiontWeapons</defName>
+    <label>toxic needle</label>
+    <graphicData>
+      <texPath>Things/Projectile/ToxicNeedleShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>BulletEnslaver</damageDef>
+      <damageAmountBase>1</damageAmountBase>
+      <armorPenetrationBase>1</armorPenetrationBase>
+      <stoppingPower>0</stoppingPower>
+      <speed>90</speed>
+    </projectile>
+  </ThingDef>
+
+	<!--Новый тип урона-->
+	<DamageDef ParentName="Bullet">
+		<defName>BulletEnslaver</defName>
+		<label>toxic enslaver</label>
+		<additionalHediffs>
+			<li>
+				<hediff>Enslaver</hediff>
+				<severityPerDamageDealt>1</severityPerDamageDealt>
+				<inverseStatScaling>true</inverseStatScaling>
+				<victimSeverityScalingByInvBodySize>true</victimSeverityScalingByInvBodySize>
+			</li>
+		</additionalHediffs>
+		<applyAdditionalHediffsIfHuntingForFood>false</applyAdditionalHediffsIfHuntingForFood>
+		<impactSoundType>Bullet</impactSoundType>
+	</DamageDef>
+
+	<!--Новое состояние здоровья-->
+	<HediffDef ParentName="ChronicPlantBase">
+		<defName>Enslaver</defName>
+		<label>enslaver</label>
+		<description>.</description>
+		<initialSeverity>1</initialSeverity>
+		<blocksSocialInteraction>true</blocksSocialInteraction>
+		<comps>
+			<li Class="Euglena.HediffCompProperties_FractionСhange"></li>	
+			<li Class="HediffCompProperties_SkillDecay">
+				<decayPerDayPercentageLevelCurve>
+					<points>
+						<li>(20, 5)</li>
+					</points>
+				</decayPerDayPercentageLevelCurve>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<mtbDeathDestroysBrain>true</mtbDeathDestroysBrain>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<SocialImpact>0</SocialImpact>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>
