@@ -1,0 +1,6 @@
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Euglena Slime Printer\Assemblies\Euglena_SlimePrinter_Class.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Euglena Slime Printer\Assemblies\Euglena_SlimePrinter_Class.pdb
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Euglena Slime Printer\Euglena_Slime_Printer\Phototrophs_Class\obj\Release\Euglena_SlimePrinter_Class.csproj.CoreCompileInputs.cache
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Euglena Slime Printer\Euglena_Slime_Printer\Phototrophs_Class\obj\Release\Euglena_SlimePrinter_Class.csproj.CopyComplete
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Euglena Slime Printer\Euglena_Slime_Printer\Phototrophs_Class\obj\Release\Euglena_SlimePrinter_Class.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\Euglena Slime Printer\Euglena_Slime_Printer\Phototrophs_Class\obj\Release\Euglena_SlimePrinter_Class.pdb

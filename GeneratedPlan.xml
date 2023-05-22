@@ -1,26 +1,62 @@
 ﻿<Phototrophs_Class.PlanGenBuild>
     <buildingMap>
-        <li>Em,Em,Em,Em</li>
-        <li>Em,al,al,Em</li>
-        <li>Em,al,al,Em</li>
-        <li>Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,fh,Em,fs,Em,fh,Em,Em,Em</li>
+        <li>fw,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,cR,Em,cR,cR,Em,Em,Em</li>
+        <li>Em,Em,Em,ac,Em,Em,Em,Em,Em,Em,Em,Em</li>
+        <li>Em,fw,fh,Em,Em,Em,Em,Em,Em,cR,Em,fs</li>
+        <li>Em,fh,Em,Em,cR,Em,Em,Em,Em,cR,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,cR,Em,fs</li>
+        <li>fh,Em,Em,fh,cR,Em,Em,Em,Em,cR,Em,Em</li>
+        <li>Em,Em,Em,cR,Em,Em,Em,Em,cR,cR,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,cR,Em,Em,fh</li>
+        <li>fh,fh,Em,Em,ft,Em,cR,cR,cR,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,fh,Em</li>
+        <li>Em,fs,Em,Em,Em,Em,Em,Em,Em,Em,fh,Em</li>
     </buildingMap>
     <terrainMap>
-        <li>qc,qc,qc,qc</li>
-        <li>qc,qc,qc,qc</li>
-        <li>qc,qc,qc,qc</li>
-        <li>qc,qc,qc,qc</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pH,pH,pJ,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pH,pH,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pH,pH,pH,pH,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pH,pH,pH,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pH,pH,pH,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pH,pJ,pH,pH,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pH,pJ,pH,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ</li>
+        <li>pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ,pJ</li>
     </terrainMap>
     <roofMap>
-        <li>0,0,0,0</li>
-        <li>0,0,0,0</li>
-        <li>0,0,0,0</li>
-        <li>0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
+        <li>0,0,0,0,0,0,0,0,0,0,0,0</li>
     </roofMap>
     <stuffMap>
-        <li>Em,Zc,Zc,Em</li>
-        <li>Em,Em,Em,Em</li>
-        <li>Em,Em,Em,Em</li>
-        <li>Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Zc,Em,Zc,Zc,Em,Em,Em</li>
+        <li>Em,Em,Em,Zc,Em,Em,Em,Em,Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Zc,Em,Em</li>
+        <li>Em,Em,Em,Em,Zc,Em,Em,Em,Em,Zc,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Zc,Em,Em</li>
+        <li>Em,Em,Em,Em,Zc,Em,Em,Em,Em,Zc,Em,Em</li>
+        <li>Em,Em,Em,Zc,Em,Em,Em,Em,Zc,Zc,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Zc,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Zc,Zc,Zc,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em</li>
+        <li>Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em,Em</li>
     </stuffMap>
 </Phototrophs_Class.PlanGenBuild>
